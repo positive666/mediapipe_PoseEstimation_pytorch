@@ -4,7 +4,7 @@
 
 For work reasons, open source can only go so far
 
-based on port of MediaPipe (https://github.com/google/mediapipe) tflite models to PyTorch
+based on https://github.com/zmurez/MediaPipePyTorch
 
 ![Teaser](/documentation/image/teaser.gif)
 
