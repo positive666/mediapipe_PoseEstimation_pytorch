@@ -6,6 +6,7 @@ For work reasons, open source can only go so far,(https://github.com/positive666
 
 based on MediaPipePyTorch(https://github.com/zmurez/MediaPipePyTorch)
 Port of MediaPipe (https://github.com/google/mediapipe) tflite models to PyTorch
+
 ![Teaser](/documentation/image/teaser.gif)
 
 
@@ -50,11 +51,11 @@ Builds upon the work of https://github.com/hollance/BlazeFace-PyTorch
   
 ## run 
 
-  1. read arags set,such as：
+  1. read args in demo.py ,such as：
   
     python demo.py --source sample\tesla.mp4 --detect_face  --detect_iris  --save_file 
   
-  2. 3D unity ,First,your need a 3D unity model and open project setting
+  2. First,your need a 3D unity model and open project setting
   
     python demo.py --source sample\tesla.mp4 --detect_face   --connect --debug  --port 5066
 
