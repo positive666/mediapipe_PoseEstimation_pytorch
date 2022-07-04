@@ -2,18 +2,13 @@
 
 ![Teaser](/doc/demo.gif)
 
-For work reasons, open source can only go so far,(https://github.com/positive666/mediapipe_PoseEstimation_pytorch)
+For work reasons, open source can only go so far
 
-based on MediaPipePyTorch(https://github.com/zmurez/MediaPipePyTorch)
-Port of MediaPipe (https://github.com/google/mediapipe) tflite models to PyTorch
+based on port of MediaPipe (https://github.com/google/mediapipe) tflite models to PyTorch
 
 ![Teaser](/documentation/image/teaser.gif)
 
 
-
-
-
-Builds upon the work of https://github.com/hollance/BlazeFace-PyTorch
 ## feature
 
    1. Friendly Torch Implementation ,using the GPU the GPU
