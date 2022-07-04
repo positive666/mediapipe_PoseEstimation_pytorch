@@ -1,4 +1,4 @@
-# MediaPipe human_poseEstimation in PyTorch
+## MediaPipe human_poseEstimation in PyTorch
 
 ![Teaser](/doc/demo.gif)
 
@@ -29,7 +29,7 @@ Builds upon the work of https://github.com/hollance/BlazeFace-PyTorch
 
 
 
-# driver model 
+## driver model 
 <p align="center">
     <a href="https://youtu.be/Jvzltozpbpk">
         <img src="doc/3d.gif">
@@ -40,7 +40,7 @@ Builds upon the work of https://github.com/hollance/BlazeFace-PyTorch
 
   pip -r install requirements
   
-  # if your need 3D demo，provide a Unity DEMO
+## if your need 3D demo，provide a Unity DEMO
    
   (reference this repo:https://github.com/mmmmmm44/VTuber-Python-Unity)
   
