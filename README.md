@@ -44,7 +44,7 @@ based on https://github.com/zmurez/MediaPipePyTorch
    
   (reference this repo:https://github.com/mmmmmm44/VTuber-Python-Unity)
   
-## run 
+## Run 
 
   1. read args in demo.py ,such as：
   
@@ -54,9 +54,13 @@ based on https://github.com/zmurez/MediaPipePyTorch
   
     python demo.py --source sample\tesla.mp4 --detect_face   --connect --debug  --port 5066
 
-
-
+## Train
+   
+    
+	Recently will first, collate blazeface magic modified SSD training code,waiting~
+   
 ## TODO
+- [ ] add BlazeFace train function 
 - [ ] imporve pose detect function
 - [ ] Add conversion and verification scripts
 - [ ] Add multiprocess demo
