@@ -1,5 +1,7 @@
 ## MediaPipe human_poseEstimation in PyTorch
 
+#搬砖不易，记得star oo~
+
 ![Teaser](/doc/demo.gif)
 
 For work reasons, open source can only go so far
