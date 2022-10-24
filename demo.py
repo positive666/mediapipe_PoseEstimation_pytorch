@@ -369,7 +369,10 @@ def run(args):
             # print the sent values in the terminal
             if args.debug:
                 print_debug_msg(pose_result)
-            cv2.imshow(WINDOW, frame)
+            show_frame=cv2.cvtColor(frame,cv2.COLOR_RGB2BGR)
+            cv2.imshow(WINDOW, show_frame)
+            if args.save_file:
+                pose_struct['save_writer'].write(frame)
             t1=time.time()
             print(f"conuse time:{t1-t0}")
             hasFrame, frame = capture.read()
