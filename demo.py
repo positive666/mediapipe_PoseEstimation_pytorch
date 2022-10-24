@@ -24,10 +24,7 @@ from argparse import ArgumentParser
 #import cupy as cp
 from blazeiris import IrisLM
 from blazepose_landmark import BlazePoseLandmark
-#from cupy._core.dlpack import toDlpack
-#from cupy._core.dlpack import fromDlpack
-#from torch.utils.dlpack import to_dlpack
-#from torch.utils.dlpack import from_dlpack
+
 
 #  init TCP connection with unity
 # return the socket connected
@@ -71,32 +68,10 @@ def print_debug_msg(args):
     # return s
 
 
-    
-def pad_image(im, desired_size=64):
-    
-    old_size = im.shape[:2] # old_size is in (height, width) format
-
-    ratio = float(desired_size)/max(old_size)
-    new_size = tuple([int(x*ratio) for x in old_size])
-
-    # new_size should be in (width, height) format
-
-    im = cv2.resize(im, (new_size[1], new_size[0]))
-
-    delta_w = desired_size - new_size[1]
-    delta_h = desired_size - new_size[0]
-    top, bottom = delta_h//2, delta_h-(delta_h//2)
-    left, right = delta_w//2, delta_w-(delta_w//2)
-    
-    color = [0, 0, 0]
-    new_im = cv2.copyMakeBorder(im, top, bottom, left, right, cv2.BORDER_CONSTANT,
-        value=color)
-    
-    return new_im
 
 def pose_detect(frame,pose_struct,pose_stable_lists,draw=True):
    
-    frame = np.ascontiguousarray(frame[:,::-1,::-1])
+    #frame = np.ascontiguousarray(frame[:,::-1,::-1])
     img1, img2, scale, pad = resize_pad(frame)
 
     normalized_pose_detections = pose_struct['pose_detector'].predict_on_image(img2)
@@ -117,7 +92,7 @@ def pose_detect(frame,pose_struct,pose_stable_lists,draw=True):
     return frame
     
 def palm_detect(frame,pose_struct,pose_stable_lists,draw=True):
-    frame = np.ascontiguousarray(frame[:,:,::-1])
+    
     img1, img2, scale, pad = resize_pad(frame)
     normalized_palm_detections = pose_struct['palm_detector'].predict_on_image(img1)
   
@@ -132,8 +107,8 @@ def palm_detect(frame,pose_struct,pose_stable_lists,draw=True):
                     landmark, flag = landmarks[i], flags[i]
                     if flag>.5:
                         draw_landmarks(frame, landmark[:,:2], HAND_CONNECTIONS, size=2)
-        #draw_detections(frame, palm_detections)
-        #draw_roi(frame, box)    
+        draw_detections(frame, palm_detections)
+        draw_roi(frame, box)    
         #cv2.imshow('palm',frame[:,:,::-1])
         #key = cv2.waitKey(10)
     
@@ -378,13 +353,8 @@ def run(args):
     
     while hasFrame:
             t0=time.time()
-            #frame_ct +=1
-            #fr=frame.copy()
-            #if mirror_img:
-                #frame = np.ascontiguousarray(frame[:,::-1,::-1])
-            #else:
-            
-            #frame = np.ascontiguousarray(frame[:,:,::-1])
+          
+            frame = np.ascontiguousarray(frame[:,:,::-1])
             if args.detect_face:
                 print("run face")
                 pose_result,frame=face_detect(frame,pose_struct,pose_stable_lists)
